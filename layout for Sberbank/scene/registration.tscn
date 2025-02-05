@@ -1,0 +1,99 @@
+[gd_scene load_steps=5 format=3 uid="uid://tcmjgo4atc08"]
+
+[ext_resource type="Script" path="res://scripts/registration.gd" id="1_kxvau"]
+[ext_resource type="Texture2D" uid="uid://bxyxsxxyvt5qi" path="res://sprites/1665560867177999044.jpg" id="1_mysd8"]
+[ext_resource type="FontFile" uid="uid://dpyg0bswiljy5" path="res://fonts/ofont.ru_Nunito.ttf" id="2_btb8d"]
+[ext_resource type="Texture2D" uid="uid://dmq84uwc2r31v" path="res://sprites/button.png" id="3_ptxhu"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kxvau")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mysd8")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+offset_left = 229.0
+offset_top = 1271.0
+offset_right = 932.0
+offset_bottom = 1611.0
+size_flags_horizontal = 8
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_btb8d")
+theme_override_font_sizes/font_size = 62
+text = "Добро пожаловать
+ в
+ JUNwallet!"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+offset_top = 648.0
+offset_right = 1076.0
+offset_bottom = 957.0
+size_flags_horizontal = 8
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_fonts/font = ExtResource("2_btb8d")
+theme_override_font_sizes/font_size = 62
+text = "Меня зовут Рикани!
+Я твой виртуальный помощник "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -350.0
+offset_top = -481.0
+offset_right = 350.0
+offset_bottom = -138.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 10
+texture_normal = ExtResource("3_ptxhu")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="TextureButton"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 84.0
+offset_right = 687.0
+offset_bottom = 269.0
+theme_override_font_sizes/font_size = 62
+text = "даллее"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

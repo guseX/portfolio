@@ -1,0 +1,95 @@
+[gd_scene load_steps=8 format=3 uid="uid://b5ned5n5iclse"]
+
+[ext_resource type="Script" path="res://scripts/control.gd" id="1_avogo"]
+[ext_resource type="Texture2D" uid="uid://dqlb8j73maev" path="res://sprites/card.png" id="1_o6a0j"]
+[ext_resource type="Texture2D" uid="uid://dlf08d60llgw4" path="res://sprites/card_dizain/cat_card.png" id="3_vjdwb"]
+[ext_resource type="FontFile" uid="uid://dpyg0bswiljy5" path="res://fonts/ofont.ru_Nunito.ttf" id="3_x6hef"]
+[ext_resource type="Texture2D" uid="uid://d0ljv8ay4m7av" path="res://sprites/card_dizain/rikani_card.png" id="4_75xwc"]
+[ext_resource type="Texture2D" uid="uid://bj0wmqm7lvs7o" path="res://sprites/card_dizain/goose_card.png" id="5_nwmen"]
+[ext_resource type="Texture2D" uid="uid://iis4ax7pl3uh" path="res://sprites/card_dizain/p_card.png" id="7_df7sc"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_avogo")
+
+[node name="base" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -534.0
+offset_top = -415.0
+offset_right = 537.0
+offset_bottom = 212.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_o6a0j")
+
+[node name="cat" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 38.0
+offset_top = 775.0
+offset_right = 1044.0
+offset_bottom = 1357.0
+texture = ExtResource("3_vjdwb")
+
+[node name="rik" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 37.0
+offset_top = 770.0
+offset_right = 1046.0
+offset_bottom = 1359.0
+texture = ExtResource("4_75xwc")
+
+[node name="guse" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 36.0
+offset_top = 771.0
+offset_right = 1044.0
+offset_bottom = 1357.0
+texture = ExtResource("5_nwmen")
+
+[node name="valut" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.0
+offset_top = -161.0
+offset_right = -61.0
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_x6hef")
+theme_override_font_sizes/font_size = 84
+text = "₽"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 162
+
+[node name="fun" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -96.0
+offset_top = 593.0
+offset_right = 1172.0
+offset_bottom = 1524.0
+texture = ExtResource("7_df7sc")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

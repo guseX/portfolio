@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://dorq23x43khbn"]
+
+[ext_resource type="Script" path="res://scripts/reg_tree.gd" id="1_apunn"]
+[ext_resource type="Texture2D" uid="uid://dmttngrf3em2l" path="res://sprites/0845c83f92f311efa91e96abdde39816_1.jpg" id="1_ccequ"]
+[ext_resource type="PackedScene" uid="uid://b0h8nf2ord1xg" path="res://scene/card.tscn" id="2_imnak"]
+[ext_resource type="Texture2D" uid="uid://dmq84uwc2r31v" path="res://sprites/button.png" id="3_2ogyv"]
+[ext_resource type="FontFile" uid="uid://dpyg0bswiljy5" path="res://fonts/ofont.ru_Nunito.ttf" id="4_8g1it"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_apunn")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ccequ")
+
+[node name="Control" parent="." instance=ExtResource("2_imnak")]
+layout_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -350.0
+offset_top = -372.0
+offset_right = 350.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 10
+texture_normal = ExtResource("3_2ogyv")
+
+[node name="Label" type="Label" parent="TextureButton"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 84.0
+offset_right = 687.0
+offset_bottom = 269.0
+theme_override_font_sizes/font_size = 62
+text = "даллее"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -431.0
+offset_top = 474.0
+offset_right = 432.0
+offset_bottom = 564.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("4_8g1it")
+theme_override_font_sizes/font_size = 62
+text = "введи данные своей карты"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

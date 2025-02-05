@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0h8nf2ord1xg"]
+
+[ext_resource type="Texture2D" uid="uid://dqlb8j73maev" path="res://sprites/card.png" id="1_2hqlw"]
+[ext_resource type="Script" path="res://scripts/card.gd" id="1_4u0yi"]
+[ext_resource type="FontFile" uid="uid://dpyg0bswiljy5" path="res://fonts/ofont.ru_Nunito.ttf" id="2_ycfcw"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4u0yi")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -454.5
+offset_top = -267.0
+offset_right = 454.5
+offset_bottom = 267.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_2hqlw")
+
+[node name="nc" type="LineEdit" parent="TextureRect"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 277.0
+offset_right = 792.0
+offset_bottom = 317.0
+theme_override_fonts/font = ExtResource("2_ycfcw")
+theme_override_font_sizes/font_size = 48
+placeholder_text = "0000 0000 0000 0000"
+alignment = 1
+max_length = 19
+expand_to_text_length = true
+virtual_keyboard_type = 2
+
+[node name="date" type="LineEdit" parent="TextureRect"]
+layout_mode = 0
+offset_left = 275.5
+offset_top = 367.0
+offset_right = 411.5
+offset_bottom = 425.0
+theme_override_fonts/font = ExtResource("2_ycfcw")
+theme_override_font_sizes/font_size = 36
+placeholder_text = "00/00"
+max_length = 5
+virtual_keyboard_type = 2
+
+[node name="nam" type="LineEdit" parent="TextureRect"]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 436.0
+offset_right = 301.0
+offset_bottom = 494.0
+theme_override_fonts/font = ExtResource("2_ycfcw")
+theme_override_font_sizes/font_size = 36
+placeholder_text = "твоё имя"
+text_direction = 1
+language = "en"
+
+[connection signal="text_changed" from="TextureRect/nc" to="." method="_on_nc_text_changed"]
+[connection signal="text_changed" from="TextureRect/date" to="." method="_on_date_text_changed"]
+[connection signal="text_changed" from="TextureRect/nam" to="." method="_on_name_text_changed"]

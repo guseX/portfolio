@@ -1,0 +1,199 @@
+[gd_scene load_steps=4 format=3 uid="uid://sdrwmpewpdkr"]
+
+[ext_resource type="Texture2D" uid="uid://cmrj16brmhtdr" path="res://sprites/scroll.png" id="1_beud7"]
+[ext_resource type="FontFile" uid="uid://dpyg0bswiljy5" path="res://fonts/ofont.ru_Nunito.ttf" id="2_b14vp"]
+[ext_resource type="Texture2D" uid="uid://dmq84uwc2r31v" path="res://sprites/button.png" id="3_66ky0"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer"]
+layout_mode = 2
+texture = ExtResource("1_beud7")
+
+[node name="boss" type="Label" parent="ScrollContainer/TextureRect"]
+layout_mode = 0
+offset_top = 76.0
+offset_right = 1081.0
+offset_bottom = 573.0
+theme_override_fonts/font = ExtResource("2_b14vp")
+theme_override_font_sizes/font_size = 104
+text = "лимиты
+ и
+ ограничения"
+horizontal_alignment = 1
+
+[node name="on_buy" type="Label" parent="ScrollContainer/TextureRect"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 539.0
+offset_right = 691.0
+offset_bottom = 1041.0
+theme_override_fonts/font = ExtResource("2_b14vp")
+theme_override_font_sizes/font_size = 104
+text = "На покупки"
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/TextureRect/on_buy"]
+position = Vector2(302, 288.5)
+scale = Vector2(1.01714, 1.09329)
+texture = ExtResource("3_66ky0")
+
+[node name="Label" type="Label" parent="ScrollContainer/TextureRect/on_buy"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 228.0
+offset_right = 548.0
+offset_bottom = 447.0
+theme_override_fonts/font = ExtResource("2_b14vp")
+theme_override_font_sizes/font_size = 104
+text = "100 000₽"
+
+[node name="nal" type="Label" parent="ScrollContainer/TextureRect"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 1055.0
+offset_right = 1183.0
+offset_bottom = 1557.0
+theme_override_fonts/font = ExtResource("2_b14vp")
+theme_override_font_sizes/font_size = 90
+text = "На снятие наличных"
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/TextureRect/nal"]
+position = Vector2(302, 288.5)
+scale = Vector2(1.01714, 1.09329)
+texture = ExtResource("3_66ky0")
+
+[node name="Label" type="Label" parent="ScrollContainer/TextureRect/nal"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 228.0
+offset_right = 548.0
+offset_bottom = 447.0
+theme_override_fonts/font = ExtResource("2_b14vp")
+theme_override_font_sizes/font_size = 104
+text = "100 000₽"
+
+[node name="send" type="Label" parent="ScrollContainer/TextureRect"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 1499.0
+offset_right = 1183.0
+offset_bottom = 2001.0
+theme_override_fonts/font = ExtResource("2_b14vp")
+theme_override_font_sizes/font_size = 104
+text = "На переводы"
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/TextureRect/send"]
+position = Vector2(302, 288.5)
+scale = Vector2(1.01714, 1.09329)
+texture = ExtResource("3_66ky0")
+
+[node name="Label" type="Label" parent="ScrollContainer/TextureRect/send"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 228.0
+offset_right = 548.0
+offset_bottom = 447.0
+theme_override_fonts/font = ExtResource("2_b14vp")
+theme_override_font_sizes/font_size = 104
+text = "100 000₽"
+
+[node name="family" type="Label" parent="ScrollContainer/TextureRect"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 1736.0
+offset_right = 1156.0
+offset_bottom = 2534.0
+theme_override_fonts/font = ExtResource("2_b14vp")
+theme_override_font_sizes/font_size = 72
+text = "Настройки родителя"
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="ScrollContainer/TextureRect/family"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_top = 464.0
+offset_right = 760.0
+offset_bottom = 686.0
+theme_override_fonts/font = ExtResource("2_b14vp")
+theme_override_font_sizes/font_size = 36
+text = "это возможности карты, которые родитель
+может включать и выключать"
+
+[node name="sends" type="Label" parent="ScrollContainer/TextureRect/family"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 623.0
+offset_right = 741.0
+offset_bottom = 1089.0
+theme_override_fonts/font = ExtResource("2_b14vp")
+theme_override_font_sizes/font_size = 104
+text = "Переводы"
+
+[node name="Label" type="Label" parent="ScrollContainer/TextureRect/family/sends"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_top = 125.0
+offset_right = 542.0
+offset_bottom = 278.0
+theme_override_fonts/font = ExtResource("2_b14vp")
+theme_override_font_sizes/font_size = 46
+text = "Можно переводить"
+
+[node name="buy_in_int" type="Label" parent="ScrollContainer/TextureRect/family"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 932.0
+offset_right = 741.0
+offset_bottom = 1398.0
+theme_override_fonts/font = ExtResource("2_b14vp")
+theme_override_font_sizes/font_size = 104
+text = "Покупки 
+в
+интернете"
+
+[node name="Label" type="Label" parent="ScrollContainer/TextureRect/family/buy_in_int"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_top = 441.0
+offset_right = 549.0
+offset_bottom = 617.0
+theme_override_fonts/font = ExtResource("2_b14vp")
+theme_override_font_sizes/font_size = 46
+text = "Можно покупать"
+
+[node name="nal_in_bank" type="Label" parent="ScrollContainer/TextureRect/family"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 1576.0
+offset_right = 741.0
+offset_bottom = 2042.0
+theme_override_fonts/font = ExtResource("2_b14vp")
+theme_override_font_sizes/font_size = 104
+text = "снятие денег
+ в
+банкоматах"
+
+[node name="Label" type="Label" parent="ScrollContainer/TextureRect/family/nal_in_bank"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_top = 426.0
+offset_right = 698.0
+offset_bottom = 605.0
+theme_override_fonts/font = ExtResource("2_b14vp")
+theme_override_font_sizes/font_size = 46
+text = "Можно снимать"

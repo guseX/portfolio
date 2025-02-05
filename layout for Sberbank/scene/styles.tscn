@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=3 uid="uid://skmptt348iw"]
+
+[ext_resource type="Texture2D" uid="uid://bot4vr1m5raj" path="res://sprites/shop.png" id="1_2t0od"]
+[ext_resource type="Script" path="res://scene/styles.gd" id="1_80ckj"]
+[ext_resource type="Texture2D" uid="uid://bj0wmqm7lvs7o" path="res://sprites/card_dizain/goose_card.png" id="2_ylojr"]
+[ext_resource type="Texture2D" uid="uid://iis4ax7pl3uh" path="res://sprites/card_dizain/p_card.png" id="3_utyve"]
+[ext_resource type="Texture2D" uid="uid://dlf08d60llgw4" path="res://sprites/card_dizain/cat_card.png" id="4_32iif"]
+[ext_resource type="Texture2D" uid="uid://d0ljv8ay4m7av" path="res://sprites/card_dizain/rikani_card.png" id="5_3qiqv"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_80ckj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_2t0od")
+
+[node name="guse" type="TextureButton" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -285.0
+offset_top = 360.0
+offset_right = 285.0
+offset_bottom = 688.0
+grow_horizontal = 2
+button_mask = 7
+texture_normal = ExtResource("2_ylojr")
+
+[node name="g" type="Sprite2D" parent="TextureRect/guse"]
+position = Vector2(282, 166)
+texture = ExtResource("3_utyve")
+
+[node name="cat" type="TextureButton" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.475
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -281.0
+offset_top = -181.5
+offset_right = 281.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+button_mask = 7
+texture_normal = ExtResource("4_32iif")
+
+[node name="c" type="Sprite2D" parent="TextureRect/cat"]
+position = Vector2(282, 162)
+texture = ExtResource("3_utyve")
+
+[node name="rik" type="TextureButton" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -281.0
+offset_top = 370.0
+offset_right = 281.0
+offset_bottom = 698.0
+grow_horizontal = 2
+grow_vertical = 2
+button_mask = 7
+texture_normal = ExtResource("5_3qiqv")
+
+[node name="r" type="Sprite2D" parent="TextureRect/rik"]
+position = Vector2(276, 168)
+texture = ExtResource("3_utyve")
+
+[connection signal="pressed" from="TextureRect/guse" to="." method="_on_guse_pressed"]
+[connection signal="pressed" from="TextureRect/cat" to="." method="_on_cat_pressed"]
+[connection signal="pressed" from="TextureRect/rik" to="." method="_on_rik_pressed"]

@@ -1,0 +1,125 @@
+[gd_scene load_steps=3 format=3 uid="uid://b12ykjpk0wup2"]
+
+[ext_resource type="Texture2D" uid="uid://cg147s0qlnsy3" path="res://sprites/mountain.png" id="1_m3dbn"]
+[ext_resource type="FontFile" uid="uid://dpyg0bswiljy5" path="res://fonts/ofont.ru_Nunito.ttf" id="2_so43y"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_m3dbn")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -317.0
+offset_top = 186.0
+offset_right = 371.0
+offset_bottom = 371.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_so43y")
+theme_override_font_sizes/font_size = 104
+text = "задания"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="execiae" type="LineEdit" parent="Label"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 476.0
+offset_right = 328.0
+offset_bottom = 633.0
+theme_override_fonts/font = ExtResource("2_so43y")
+theme_override_font_sizes/font_size = 62
+placeholder_text = "задание"
+alignment = 1
+
+[node name="reward" type="LineEdit" parent="Label/execiae"]
+layout_mode = 0
+offset_left = 611.0
+offset_right = 913.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("2_so43y")
+theme_override_font_sizes/font_size = 62
+placeholder_text = "награда"
+alignment = 1
+virtual_keyboard_type = 2
+
+[node name="execiae1" type="LineEdit" parent="Label/execiae"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 323.0
+offset_right = 439.0
+offset_bottom = 480.0
+theme_override_fonts/font = ExtResource("2_so43y")
+theme_override_font_sizes/font_size = 62
+placeholder_text = "задание"
+alignment = 1
+
+[node name="reward" type="LineEdit" parent="Label/execiae/execiae1"]
+layout_mode = 0
+offset_left = 611.0
+offset_right = 913.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("2_so43y")
+theme_override_font_sizes/font_size = 62
+placeholder_text = "награда"
+alignment = 1
+virtual_keyboard_type = 2
+
+[node name="execiae2" type="LineEdit" parent="Label/execiae"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 607.0
+offset_right = 442.0
+offset_bottom = 764.0
+theme_override_fonts/font = ExtResource("2_so43y")
+theme_override_font_sizes/font_size = 62
+placeholder_text = "задание"
+alignment = 1
+
+[node name="reward" type="LineEdit" parent="Label/execiae/execiae2"]
+layout_mode = 0
+offset_left = 611.0
+offset_right = 913.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("2_so43y")
+theme_override_font_sizes/font_size = 62
+placeholder_text = "награда"
+alignment = 1
+virtual_keyboard_type = 2
+
+[node name="execiae3" type="LineEdit" parent="Label/execiae"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 930.0
+offset_right = 441.0
+offset_bottom = 1087.0
+theme_override_fonts/font = ExtResource("2_so43y")
+theme_override_font_sizes/font_size = 62
+placeholder_text = "задание"
+alignment = 1
+
+[node name="reward" type="LineEdit" parent="Label/execiae/execiae3"]
+layout_mode = 0
+offset_left = 611.0
+offset_right = 913.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("2_so43y")
+theme_override_font_sizes/font_size = 62
+placeholder_text = "награда"
+alignment = 1
+virtual_keyboard_type = 2

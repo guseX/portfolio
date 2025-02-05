@@ -1,0 +1,109 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1oq0m1st5aqk"]
+
+[ext_resource type="Texture2D" uid="uid://dgvycft5k15cd" path="res://sprites/Без имени-1.png" id="1_8awe8"]
+[ext_resource type="Script" path="res://scripts/reg_two.gd" id="1_elxk6"]
+[ext_resource type="FontFile" uid="uid://dpyg0bswiljy5" path="res://fonts/ofont.ru_Nunito.ttf" id="2_7pn57"]
+[ext_resource type="Texture2D" uid="uid://dmq84uwc2r31v" path="res://sprites/button.png" id="3_vrmtj"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_elxk6")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -251.0
+offset_top = -86.0
+offset_right = 283.0
+offset_bottom = 101.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_8awe8")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+modulate = Color(0, 0.0666667, 0.0666667, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -321.0
+offset_top = -130.0
+offset_right = 322.0
+offset_bottom = 204.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+
+[node name="Label" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_7pn57")
+theme_override_font_sizes/font_size = 62
+text = "Если есть, то пора 
+зарегистрироваться 
+в приложении!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -540.0
+offset_top = 302.0
+offset_right = 559.0
+offset_bottom = 427.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+modulate = Color(0, 0.0666667, 0.0666667, 1)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_7pn57")
+theme_override_font_sizes/font_size = 62
+text = "У тебя уже есть карта 
+JUNwallet?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -346.0
+offset_top = -367.0
+offset_right = 354.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 10
+texture_normal = ExtResource("3_vrmtj")
+
+[node name="Label2" type="Label" parent="TextureButton"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 85.0
+offset_right = 687.0
+offset_bottom = 268.0
+theme_override_font_sizes/font_size = 62
+text = "даллее"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

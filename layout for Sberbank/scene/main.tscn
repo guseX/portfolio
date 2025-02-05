@@ -1,0 +1,481 @@
+[gd_scene load_steps=16 format=3 uid="uid://d4hfhm5wi8rpp"]
+
+[ext_resource type="Texture2D" uid="uid://b3ooxjrsovpml" path="res://sprites/phon.png" id="1_5g6p8"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_m4ohn"]
+[ext_resource type="Texture2D" uid="uid://cqwnpucn3vgns" path="res://sprites/panel.png" id="4_p77mb"]
+[ext_resource type="Texture2D" uid="uid://ckyqb7dn2pxtw" path="res://sprites/hlp.png" id="5_2c0xm"]
+[ext_resource type="PackedScene" uid="uid://b5ned5n5iclse" path="res://scene/control.tscn" id="5_385kc"]
+[ext_resource type="Texture2D" uid="uid://dmq84uwc2r31v" path="res://sprites/button.png" id="6_7phtd"]
+[ext_resource type="Texture2D" uid="uid://bf3ha1725xo7u" path="res://sprites/send.png" id="6_n85rs"]
+[ext_resource type="FontFile" uid="uid://dpyg0bswiljy5" path="res://fonts/ofont.ru_Nunito.ttf" id="7_gdesx"]
+[ext_resource type="Texture2D" uid="uid://4gtsfjtyporx" path="res://sprites/spb.png" id="7_glwgq"]
+[ext_resource type="PackedScene" uid="uid://ds8dl86sxnnvd" path="res://scene/copilka.tscn" id="8_kx8fu"]
+[ext_resource type="PackedScene" uid="uid://vtm3h66ktxry" path="res://scene/info.tscn" id="9_ndktg"]
+[ext_resource type="PackedScene" uid="uid://skmptt348iw" path="res://scene/styles.tscn" id="10_4b4gu"]
+[ext_resource type="PackedScene" uid="uid://b12ykjpk0wup2" path="res://scene/exercise.tscn" id="11_pougi"]
+[ext_resource type="PackedScene" uid="uid://sdrwmpewpdkr" path="res://scene/limits.tscn" id="12_h4wlu"]
+[ext_resource type="Texture2D" uid="uid://dbserj8lc4hna" path="res://sprites/back.png" id="15_dss7e"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m4ohn")
+
+[node name="phon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5g6p8")
+
+[node name="rublC" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="settingC" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="specsettingC" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="consol" type="TextureRect" parent="specsettingC"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00185185
+anchor_top = 0.205556
+anchor_right = 0.00185185
+anchor_bottom = 0.205556
+offset_right = 1080.0
+offset_bottom = 1080.0
+texture = ExtResource("5_2c0xm")
+metadata/_edit_use_anchors_ = true
+
+[node name="enter" type="Button" parent="specsettingC/consol"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 830.0
+offset_top = 22270.5
+offset_right = 1069.0
+offset_bottom = 22349.5
+
+[node name="plus" type="Label" parent="specsettingC/consol"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 181.0
+offset_right = 422.0
+offset_bottom = 267.0
+theme_override_font_sizes/font_size = 62
+text = "+1 на карту"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="plusB" type="Button" parent="specsettingC/consol/plus"]
+layout_mode = 0
+offset_left = 432.0
+offset_top = -6.0
+offset_right = 935.0
+offset_bottom = 110.0
+theme_override_font_sizes/font_size = 48
+button_mask = 7
+text = "добавить"
+
+[node name="minus" type="Label" parent="specsettingC/consol"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 367.0
+offset_right = 428.0
+offset_bottom = 453.0
+theme_override_font_sizes/font_size = 62
+text = "-1 с карты"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="minusB" type="Button" parent="specsettingC/consol/minus"]
+layout_mode = 0
+offset_left = 432.0
+offset_top = -6.0
+offset_right = 935.0
+offset_bottom = 110.0
+theme_override_font_sizes/font_size = 48
+button_mask = 7
+text = "добавить"
+metadata/_edit_use_anchors_ = true
+
+[node name="money" parent="." instance=ExtResource("5_385kc")]
+layout_mode = 1
+
+[node name="sendB" type="TextureButton" parent="money"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -356.0
+offset_top = -970.0
+offset_right = 344.0
+offset_bottom = -627.0
+grow_horizontal = 2
+grow_vertical = 0
+button_mask = 7
+texture_normal = ExtResource("6_7phtd")
+
+[node name="send" type="Label" parent="money/sendB"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 85.0
+offset_right = 687.0
+offset_bottom = 271.0
+theme_override_fonts/font = ExtResource("7_gdesx")
+theme_override_font_sizes/font_size = 62
+text = "перевести 
+С КАРТЫ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="laoB2" type="TextureButton" parent="money"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 1643.0
+offset_right = 662.0
+offset_bottom = 1838.0
+size_flags_horizontal = 4
+size_flags_vertical = 10
+button_mask = 7
+texture_normal = ExtResource("6_7phtd")
+texture_pressed = ExtResource("6_7phtd")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="lao" type="Label" parent="money/laoB2"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 48.0
+offset_right = 453.0
+offset_bottom = 152.0
+theme_override_fonts/font = ExtResource("7_gdesx")
+theme_override_font_sizes/font_size = 36
+text = "лимиты и ограничения"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="money" type="Label" parent="money"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -266.0
+offset_right = 27.0
+offset_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("7_gdesx")
+theme_override_font_sizes/font_size = 84
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="info" type="TextureButton" parent="money"]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 1814.0
+offset_right = 880.0
+offset_bottom = 2061.0
+button_mask = 7
+texture_normal = ExtResource("6_7phtd")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="money/info"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 19.0
+offset_top = 61.0
+offset_right = 519.0
+offset_bottom = 193.0
+theme_override_fonts/font = ExtResource("7_gdesx")
+theme_override_font_sizes/font_size = 36
+text = "информация
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sb" type="TextureButton" parent="money"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 80.0
+offset_right = 378.0
+offset_bottom = 351.0
+scale = Vector2(1.00158, 1)
+button_mask = 7
+texture_normal = ExtResource("6_7phtd")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="money/sb"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 67.0
+offset_right = 328.0
+offset_bottom = 212.0
+theme_override_fonts/font = ExtResource("7_gdesx")
+theme_override_font_sizes/font_size = 62
+text = "стиль"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="money"]
+position = Vector2(820, 1740)
+scale = Vector2(0.365176, 0.365176)
+texture = ExtResource("7_glwgq")
+
+[node name="Label" type="Label" parent="money/Sprite2D"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 150.612
+offset_top = -153.0
+offset_right = 481.612
+offset_bottom = 167.0
+theme_override_fonts/font = ExtResource("7_gdesx")
+theme_override_font_sizes/font_size = 164
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="send_money" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(543, 1172)
+texture = ExtResource("6_n85rs")
+
+[node name="you" type="Label" parent="send_money"]
+offset_left = -361.0
+offset_top = -456.0
+offset_right = -16.0
+offset_bottom = -328.0
+theme_override_fonts/font = ExtResource("7_gdesx")
+theme_override_font_sizes/font_size = 62
+text = "СберКарта"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="send_money/you"]
+layout_mode = 0
+offset_left = -16.0
+offset_top = 127.0
+offset_right = 72.0
+offset_bottom = 161.0
+theme_override_fonts/font = ExtResource("7_gdesx")
+theme_override_font_sizes/font_size = 36
+text = "Откуда"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="u" type="Label" parent="send_money/you"]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 1.0
+offset_right = 688.0
+offset_bottom = 127.0
+theme_override_fonts/font = ExtResource("7_gdesx")
+theme_override_font_sizes/font_size = 62
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="any" type="Label" parent="send_money/you"]
+layout_mode = 0
+offset_top = 595.0
+offset_right = 736.0
+offset_bottom = 743.0
+theme_override_fonts/font = ExtResource("7_gdesx")
+theme_override_font_sizes/font_size = 136
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="minus" type="Button" parent="send_money/you/any"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 19.0
+offset_right = 169.0
+offset_bottom = 165.0
+theme_override_fonts/font = ExtResource("7_gdesx")
+theme_override_font_sizes/font_size = 100
+button_mask = 7
+text = "-"
+
+[node name="plus" type="Button" parent="send_money/you/any"]
+layout_mode = 0
+offset_left = 562.0
+offset_top = 19.0
+offset_right = 709.0
+offset_bottom = 154.0
+theme_override_fonts/font = ExtResource("7_gdesx")
+theme_override_font_sizes/font_size = 100
+button_mask = 7
+text = "+"
+
+[node name="LineEdit" type="LineEdit" parent="send_money"]
+offset_left = -375.0
+offset_top = -66.0
+offset_right = 395.0
+offset_bottom = 66.0
+theme_override_fonts/font = ExtResource("7_gdesx")
+theme_override_font_sizes/font_size = 46
+placeholder_text = "Номер телефона или карты"
+alignment = 1
+virtual_keyboard_type = 4
+
+[node name="Label" type="Label" parent="send_money/LineEdit"]
+layout_mode = 0
+offset_top = 133.0
+offset_right = 151.0
+offset_bottom = 167.0
+theme_override_fonts/font = ExtResource("7_gdesx")
+theme_override_font_sizes/font_size = 36
+text = "Куда"
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="send_money"]
+offset_left = -225.0
+offset_top = 301.0
+offset_right = 227.0
+offset_bottom = 496.0
+button_mask = 7
+texture_normal = ExtResource("6_7phtd")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="send_money/TextureButton"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 49.0
+offset_right = 442.0
+offset_bottom = 153.0
+theme_override_fonts/font = ExtResource("7_gdesx")
+theme_override_font_sizes/font_size = 62
+text = "перевести"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="copilka" parent="." instance=ExtResource("8_kx8fu")]
+visible = false
+layout_mode = 1
+
+[node name="info" parent="." instance=ExtResource("9_ndktg")]
+visible = false
+layout_mode = 1
+
+[node name="styles" parent="." instance=ExtResource("10_4b4gu")]
+visible = false
+layout_mode = 1
+
+[node name="exercise" parent="." instance=ExtResource("11_pougi")]
+visible = false
+layout_mode = 1
+
+[node name="limits" parent="." instance=ExtResource("12_h4wlu")]
+visible = false
+layout_mode = 1
+
+[node name="panel" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -540.0
+offset_top = -180.0
+offset_right = 540.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("4_p77mb")
+
+[node name="home" type="Button" parent="panel"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 91.0
+offset_top = 27.0
+offset_right = 211.0
+offset_bottom = 154.0
+action_mode = 0
+button_mask = 7
+
+[node name="rubl" type="Button" parent="panel"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 357.0
+offset_top = 33.0
+offset_right = 473.0
+offset_bottom = 147.0
+action_mode = 0
+button_mask = 7
+
+[node name="exercise" type="Button" parent="panel"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 647.0
+offset_top = 32.0
+offset_right = 758.0
+offset_bottom = 149.0
+action_mode = 0
+button_mask = 7
+
+[node name="spec setings" type="Button" parent="panel"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 901.0
+offset_top = 34.0
+offset_right = 1014.0
+offset_bottom = 143.0
+action_mode = 0
+button_mask = 7
+
+[node name="color" type="Timer" parent="."]
+autostart = true
+
+[node name="back" type="TextureButton" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 18.0
+offset_top = 66.0
+offset_right = 214.0
+offset_bottom = 291.0
+texture_normal = ExtResource("15_dss7e")
+stretch_mode = 0
+
+[connection signal="pressed" from="specsettingC/consol/plus/plusB" to="." method="_on_plus_b_pressed"]
+[connection signal="pressed" from="specsettingC/consol/minus/minusB" to="." method="_on_minus_b_pressed"]
+[connection signal="pressed" from="money/sendB" to="." method="_on_send_b_pressed"]
+[connection signal="pressed" from="money/laoB2" to="." method="_on_lao_b_2_pressed"]
+[connection signal="pressed" from="money/info" to="." method="_on_info_pressed"]
+[connection signal="pressed" from="money/sb" to="." method="_on_sb_pressed"]
+[connection signal="pressed" from="send_money/you/any/minus" to="." method="_on_minus_pressed"]
+[connection signal="pressed" from="send_money/you/any/plus" to="." method="_on_plus_pressed"]
+[connection signal="pressed" from="send_money/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="panel/home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="panel/rubl" to="." method="_on_rubl_pressed"]
+[connection signal="pressed" from="panel/exercise" to="." method="_on_exercise_pressed"]
+[connection signal="pressed" from="panel/spec setings" to="." method="_on_spec_setings_pressed"]
+[connection signal="timeout" from="color" to="." method="_on_color_timeout"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
