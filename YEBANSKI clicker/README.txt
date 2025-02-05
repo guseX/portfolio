@@ -1,1 +1,2 @@
+-🤝this project was ordered from me by a friend, like most other crazy games!
 -🖥️Due to the fact that this game is made on the Godot engine, I cannot provide the project code :(
