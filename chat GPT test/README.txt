@@ -1,0 +1,1 @@
+-🖥️I did this project to learn how to work with AI, in my opinion it’s not bad :)
